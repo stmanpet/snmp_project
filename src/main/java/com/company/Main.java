@@ -116,7 +116,7 @@ class SNMP_Scanner {
     public static void isReachable() throws IOException {
         String sub = "10.10.30.";
 
-        for(int i = 0; i < 255; i++) {
+        for(int i = 0; i <= 255; i++) {
             String thisone = String.valueOf(i);
             String address = sub + thisone;
             InetAddress inet = InetAddress.getByName(address);
