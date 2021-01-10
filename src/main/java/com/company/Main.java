@@ -39,7 +39,7 @@ class SNMP_Scanner {
     }
     public static void exampleMib(){
         String[] oids = {".1.3.6.1.2.1.1.6.0", ".1.3.6.1.2.1.25.1.1.0", ".1.3.6.1.2.1.1.5.0", "1.3.6.1.2.1.25.1.6.0", ".1.3.6.1.2.1.1.1.0", ".1.3.6.1.2.1.25.2.2.0"};
-        String ip = "10.10.30.220";
+        String ip = "10.10.30.254";
         Mib mib = newMIB();
 
         SimpleSnmpV2cTarget snmpV2cTarget = new SimpleSnmpV2cTarget();
@@ -52,7 +52,6 @@ class SNMP_Scanner {
                 SnmpResponse<VarbindCollection> inf = snmpContext.get(oids[i]);
                 VarbindCollection output = inf.get();
                 Varbind finalOutput = output.get(0);
-                System.out.println("1111111");
                 if(i==0){
                     System.out.println("Location: " + finalOutput+"\n\n");
                 }
